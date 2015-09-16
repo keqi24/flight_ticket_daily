@@ -170,9 +170,9 @@ def print_data(isPrint, data):
 def sendmail(title, content):
     dest_list = ["keqi25@gmail.com"]
     if send_email(dest_list, title, content):
-        print "send mail success"
+        return "send mail success"
     else :
-        print "send mail failed"
+        return "send mail failed"
     # print 'send email:' + title + ':' + content
 
 def query_lowest(shreshold_price):
@@ -197,8 +197,9 @@ def query_lowest(shreshold_price):
         print str(e)
 
     if isSendMail:
-        sendmail(title, content);
-    return str(title)
+        return str(title) + "\n" + sendmail(title, content);
+    else :
+        return str(title) + "\n" + "Not send email"
 
 def query_daily():
     title = ''
@@ -217,11 +218,10 @@ def query_daily():
         content = str(e)
         print str(e)
 
-    sendmail(title, content);
-    return str(title)
+    return str(title) + "\n" + sendmail(title, content)
 
 
     
 if __name__ == "__main__":
-    query_result = query_lowest(750.0);
+    query_result = query_daily()
     
