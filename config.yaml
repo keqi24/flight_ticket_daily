@@ -1,0 +1,6 @@
+name: flight_ticket_daily
+version: 1
+cron:
+  -description: query daily ticket
+  url: cron.py
+  schedule: "25 18 * * *" 
