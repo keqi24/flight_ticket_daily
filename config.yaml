@@ -3,4 +3,4 @@ version: 1
 cron:
   -description: query daily ticket
   url: cron.py
-  schedule: "36 11,18 * * *" 
+  schedule: "36 11,20 * * *" 
